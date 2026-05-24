@@ -1,0 +1,23 @@
+{
+  "exp_name": "multiscale_corr",
+  "ablation_config": {
+    "use_cross_attention": false,
+    "use_contrastive_loss": false,
+    "use_dice_loss": false,
+    "use_lovasz_loss": false,
+    "use_enhanced_aggregator": false,
+    "use_pos_encoding": false,
+    "use_consistency_loss": false,
+    "use_focal_loss": false,
+    "use_boundary_loss": false,
+    "use_label_smoothing": false,
+    "use_multiscale_correlation": true,
+    "use_enhanced_augmentation": false,
+    "use_prototype_refinement": false,
+    "use_sq_consistency": false,
+    "use_proto_noise": false,
+    "use_feat_dropout": false
+  },
+  "best_miou": 0.45471067644949564,
+  "epochs": 50
+}
