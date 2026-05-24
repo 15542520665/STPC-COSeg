@@ -1,3 +1,5 @@
+#The relevant code files will be made publicly available upon acceptance of the manuscript. Below are our training logs and pre-trained model weights for your reference.
+
 ## Datasets Preparation
 
 You can either directly download the preprocessed dataset directly from the links provided below or perform the preprocessing steps on your own.
@@ -39,4 +41,4 @@ You can either directly download the preprocessed dataset directly from the link
 
 After preprocessing the datasets, a folder named `blocks_bs1_s1` will be generated under `PATH_to_DATASET_processed_data`. Make sure to update the `data_root` entry in the .yaml config file to `[PATH_to_DATASET_processed_data]/blocks_bs1_s1/data`.
 
-#The relevant code files will be made publicly available upon acceptance of the manuscript. Below are our training logs and pre-trained model weights for your reference.
+
