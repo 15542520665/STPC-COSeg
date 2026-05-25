@@ -99,3 +99,20 @@ python test_only.py --config config/s3dis_ablation.yaml --exp multiscale_dice_pr
 ```
 
 > **Note:** It is common to observe fluctuations in mIoU by approximately 1.0%. This variability may be attributed to the relatively small size of the training set. The variance in performance on ScanNetv2 tends to be smaller compared to S3DIS due to its larger size.
+
+## Acknowledgement
+
+Our codebase is built upon [COSeg](https://github.com/ZhaochongAn/COSeg). The dataset preprocessing scripts, preprocessed dataset links, environment setup instructions, and CUDA point cloud operations (`lib/pointops`, `lib/pointops2`) are adopted from the original COSeg repository. The backbone network is based on [Stratified Transformer](https://github.com/dvlab-research/Stratified-Transformer). We thank the authors for making their code publicly available.
+
+## Citation
+
+If you find this project useful, please consider citing the original COSeg work:
+
+```bibtex
+@inproceedings{an2024rethinking,
+  title={Rethinking Few-shot 3D Point Cloud Semantic Segmentation},
+  author={An, Zhaochong and Sun, Guolei and Liu, Yun and Liu, Fayao and Wu, Zongwei and Wang, Dan and Van Gool, Luc and Belongie, Serge},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2024}
+}
+```
