@@ -1,0 +1,46 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build artifacts
+build/
+dist/
+*.egg
+*.egg-info/
+*.so
+*.o
+*.a
+
+# CUDA / extension build cache
+*.ninja
+.ninja_*
+*.cu.o
+
+# System metadata
+.DS_Store
+Thumbs.db
+*Zone.Identifier
+
+# Logs and temporary files
+*.log
+*.tmp
+*.cache
+.cache/
+
+# Experiment outputs and private artifacts
+runs/
+logs/
+output/
+outputs/
+exp/
+checkpoints/
+weights/
+*.pth
+*.pt
+*.ckpt
+
+# Dataset directories
+data/
+dataset/
+datasets/

@@ -1,0 +1,99 @@
+###################################
+# COSeg 消融实验配置
+# cvfold=0, 1-way 5-shot（paper_exp_1way5shot 公共基线）
+# 说明：实验差异项（exp、n_way/k_shot、save_path等）在运行命令中覆盖
+###################################
+
+DATA:
+  data_name: s3dis
+  data_root: /root/autodl-tmp/COSeg/S3DIS/Stanford3dDataset_v1.2_Aligned_Version/blocks_bs1_s1/data
+  classes: 13
+  fea_dim: 6
+  voxel_size: 0.02
+  voxel_max: 20480
+  loop: 1
+  cvfold: 0
+
+TRAIN:
+  arch: stratified_transformer
+  stem_transformer: True
+  use_xyz: True
+  sync_bn: False
+  rel_query: True
+  rel_key: True
+  rel_value: True
+  quant_size: 0.01
+  downsample_scale: 8
+  num_layers: 4
+  patch_size: 1
+  window_size: 4
+  depths: [2, 2, 6, 2]
+  channels: [48, 96, 192, 384]
+  num_heads: [3, 6, 12, 24]
+  up_k: 3
+  drop_path_rate: 0.3
+  concat_xyz: True
+  grid_size: 0.04
+  max_batch_points: 140000
+  max_num_neighbors: 34
+  ratio: 0.25
+  k: 16
+
+  aug: True
+  transformer_lr_scale: 0.1
+  jitter_sigma: 0.005
+  jitter_clip: 0.02
+  scheduler_update: epoch
+  scheduler: Poly
+  warmup: linear
+  warmup_iters: 1500
+  warmup_ratio: 0.000001
+  use_amp: True
+  optimizer: AdamW
+  ignore_label: 255
+  train_gpu: [0]
+  workers: 16
+  base_lr: 0.00005           # 降低学习率防止过拟合
+  freeze_backbone: False      # 不冻结backbone，允许微调
+  epochs: 50
+  start_epoch: 0
+  step_epoch: 3              # 更早衰减学习率
+  multiplier: 0.1
+  momentum: 0.9
+  weight_decay: 0.01
+  drop_rate: 0.5
+  manual_seed: 123
+  proto_noise_std: 0.1
+  dice_weight: 0.5
+  feat_dropout_p: 0.2
+  print_freq: 1
+  save_freq: 1
+  save_path: ./paper_exp_1way5shot
+  weight:
+  resume:
+  evaluate: True
+  eval_freq: 1
+
+Few-shot:
+  num_episode: 400
+  n_way: 1
+  k_shot: 5
+  n_queries: 1
+  num_episode_per_comb: 1000
+  pretrain_backbone: "/home/xsw666/projects/COSeg/Backbone pretraining/s3_s0pre/model/model_best.pth"
+  n_subprototypes: 100
+  vis: 0
+  forvis: 0
+  vis_save_path:
+  target_class: table
+
+Distributed:
+  dist_url: tcp://127.0.0.1:6789
+  dist_backend: 'nccl'
+  multiprocessing_distributed: False
+  world_size: 1
+  rank: 0
+
+TEST:
+  test: False
+  eval_split: val
