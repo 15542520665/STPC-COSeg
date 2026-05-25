@@ -43,7 +43,6 @@ After preprocessing the datasets, a folder named `blocks_bs1_s1` will be generat
 ## Model weights
 We provide the trained model weights across different few-shot settings and datasets below. 
 The training and testing are using  RTX 3090 GPUs.
-Please note that these weights have been retrained by us, which may have slight differences from reported results.
 You could directly load these weights for evaluation or train your own models following the training instructions.
 | Model name         | Dataset| CVFOLD | N-way K-shot | Model Weight |
 | ------------------ | -------| ------|-----|----------------------------------- |
