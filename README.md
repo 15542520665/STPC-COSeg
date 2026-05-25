@@ -42,7 +42,7 @@ After preprocessing the datasets, a folder named `blocks_bs1_s1` will be generat
 
 ## Model weights
 We provide the trained model weights across different few-shot settings and datasets below. 
-The training and testing are using 4 RTX 3090 GPUs.
+The training and testing are using  RTX 3090 GPUs.
 Please note that these weights have been retrained by us, which may have slight differences from reported results.
 You could directly load these weights for evaluation or train your own models following the training instructions.
 | Model name         | Dataset| CVFOLD | N-way K-shot | Model Weight |
@@ -105,7 +105,6 @@ pip install tensorboardX==2.6
 pip install numpy==1.20.3
 ```
 
-For incompatible installation issues, such as wanting a higher torch version (e.g., 2.1.0) but conflicts with `torch_points3d`, please refer to this thread: https://github.com/ZhaochongAn/COSeg/issues/16 or feel free to open a new discussion for further assistance.
 
 2. **Compile pointops**
 
