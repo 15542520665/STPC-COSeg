@@ -1,4 +1,4 @@
-#This work has been submitted to Applied Intelligence. The complete implementation will be made publicly available upon acceptance of the manuscript.
+#The relevant code files will be made publicly available upon acceptance of the manuscript. Below are our training logs and pre-trained model weights for your reference.
 ## Datasets Preparation
 
 You can either directly download the preprocessed dataset directly from the links provided below or perform the preprocessing steps on your own.
